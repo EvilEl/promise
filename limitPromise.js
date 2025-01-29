@@ -1,16 +1,16 @@
 const config = {
   limit: 3000,
-  text: "limitPromise",
+  value: "limitPromise",
   isError: false,
 };
 
-const createLimitPromise = ({ limit, text, isError } = config) =>
+const createLimitPromise = ({ limit, value, isError } = config) =>
   new Promise((res, rej) => {
     setTimeout(() => {
       if (isError) {
-        rej(text);
+        rej(value);
       }
-      res(text);
+      res(value);
     }, limit);
   });
 

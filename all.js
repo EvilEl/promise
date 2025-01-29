@@ -5,9 +5,9 @@
 const { createLimitPromise } = require("./limitPromise");
 
 Promise.all([
-  createLimitPromise({ text: "1" }),
-  createLimitPromise({ text: "2" }),
-  createLimitPromise({ text: "3" }),
+  createLimitPromise({ value: "1" }),
+  createLimitPromise({ value: "2" }),
+  createLimitPromise({ value: "3" }),
 ]).then(console.log);
 
 /*
@@ -15,7 +15,7 @@ Promise.all([
   асиннхроные функции
 */
 Promise.all([
-  createLimitPromise({ text: "1", limit: 999 }),
-  createLimitPromise({ text: "2", limit: 777 }),
-  createLimitPromise({ text: "3", isError: true, limit: 500 }),
+  createLimitPromise({ value: "1", limit: 999 }),
+  createLimitPromise({ value: "2", limit: 777 }),
+  createLimitPromise({ value: "3", isError: true, limit: 500 }),
 ]).catch(console.log);

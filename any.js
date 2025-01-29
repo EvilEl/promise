@@ -9,9 +9,9 @@ const { createLimitPromise } = require("./limitPromise");
  Будет отклонен в том случае если все будут отклонены
  */
 Promise.any([
-  createLimitPromise({ isError: true, text: "Ошибочка-1" }),
-  createLimitPromise({ limit: 4000, isError: true, text: "Ошибочка-2" }),
-  createLimitPromise({ limit: 1000, isError: true, text: "Ошибочка-3" }),
+  createLimitPromise({ isError: true, value: "Ошибочка-1" }),
+  createLimitPromise({ limit: 4000, isError: true, value: "Ошибочка-2" }),
+  createLimitPromise({ limit: 1000, isError: true, value: "Ошибочка-3" }),
 ]).catch(console.log);
 
 Promise.any([])

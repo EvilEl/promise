@@ -7,7 +7,7 @@ const { createLimitPromise } = require("./limitPromise");
 
 Promise.race([
   createLimitPromise(),
-  createLimitPromise({ limit: 2000, text: "noLimit" }),
+  createLimitPromise({ limit: 2000, value: "noLimit" }),
 ]).then((res) => {
   console.log(res);
 });
@@ -32,7 +32,7 @@ Promise.race([createLimitPromise(), createLimitPromise({ limit: 4000 })]).then(
 Promise.race([
   createLimitPromise(),
   createLimitPromise({ limit: 4000 }),
-  createLimitPromise({ limit: 1000, isError: true, text: "Ошибочка" }),
+  createLimitPromise({ limit: 1000, isError: true, value: "Ошибочка" }),
 ]).catch((err) => {
   console.log(err);
 });
